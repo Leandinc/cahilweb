@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sitesi</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: lightgrey;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .skull-logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+
+        .title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: lightgrey;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .discord-button {
+            background-color: #003b7d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .discord-button:hover {
+            background-color: #0056a0;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: white;
+            pointer-events: none;
+            z-index: 1;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="https://example.com/skull-logo.png" alt="Kuru Kafa Logo" class="skull-logo" onclick="location.reload();">
+
+    <div class="title">Cahil Web</div>
+    <div class="info">
+        Discord'da Cahil isimli sunucumuzla başladık ama artık dijitale önem vererek CahilWeb adresini olusturuyoruz. Biz ticaretciyiz altyapılar & sablonlar ve sanal ürün satışları yapıyoruz.
+    </div>
+
+    <div class="social-links">
+        <a href="https://youtube.com" target="_blank">YouTube</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+    </div>
+
+    <button class="discord-button" onclick="window.location.href='https://discord.gg/cahil';">Discord Sunucusu</button>
+
+    <script>
+        // Generate particles
+        function createParticles(num) {
+            for (let i = 0; i < num; i++) {
+                let particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = ${Math.random() * 10 + 5}px;
+                particle.style.height = particle.style.width;
+                particle.style.left = ${Math.random() * window.innerWidth}px;
+                particle.style.top = ${Math.random() * window.innerHeight}px;
+                document.body.appendChild(particle);
+            }
+        }
+
+        createParticles(100);
+    </script>
+</body>
+</html>
